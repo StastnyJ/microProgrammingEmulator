@@ -1,0 +1,7 @@
+mov 1 r0
+
+mov 10 r2
+
+add r0 r1
+cmp r1 r2
+jl r10

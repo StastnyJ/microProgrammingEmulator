@@ -1,0 +1,4 @@
+mov 0xFF0D r01
+mov r01 r02
+mov r02 [r01]
+mov [r02] r03

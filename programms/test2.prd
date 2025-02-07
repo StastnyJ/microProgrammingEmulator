@@ -1,0 +1,9 @@
+mov 13 r1
+mov 15 r2
+add r1 r2
+mov 10 r3
+sub r1 r3
+test r1 r2
+mov 12 r4 
+xor r1 r4
+test r0 r1
