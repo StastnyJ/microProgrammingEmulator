@@ -1,0 +1,10 @@
+mov 69 r4
+mov 0x050f r15
+mov r15 [r4]
+mov 0xffff r15
+mov 70 r4
+mov r15 [r4]
+mov 235 r15
+mov r15 r0
+wtf
+mov r4 r6

@@ -26,9 +26,9 @@ class SSCUnit:
             if opcode == 0b000101:
                 res = Z
             if opcode == 0b001010:
-                res = C ^ 1
-            if opcode == 0b001011:
                 res = C
+            if opcode == 0b001011:
+                res = C ^ 1
             if opcode == 0b001100:
                 res = (C ^ 1) & (Z ^ 1)
             if opcode == 0b001101:

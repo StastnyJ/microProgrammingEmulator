@@ -4,9 +4,7 @@ from sys import argv
 from Emulator import Emulator, EmulatorRunModes
 from Assembler import Assembler
 
-# from MicroProgram import micro_macro_mapping_PROM, micro_program_memory
-from Solution import micro_macro_mapping_PROM, micro_program_memory
-
+from MicroProgram import micro_macro_mapping_PROM, micro_program_memory
 
 
 if __name__ == "__main__":

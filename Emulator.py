@@ -64,9 +64,9 @@ class Emulator:
             "registers": self._alu._registers
         }
     
-    def run(self, mode: EmulatorRunModes = EmulatorRunModes.RUN):
+    def run(self, mode: EmulatorRunModes = EmulatorRunModes.RUN, instructions_limit: int = 1000000):
         self._run_mode = mode
-        for _ in range(1000000):
+        for tick in range(instructions_limit):
             current_mic = self._control_unit.get_mic()
             mi_instruction = MicroInstruction(self._micro_program_memory[current_mic])
 
@@ -74,7 +74,7 @@ class Emulator:
                 print("----------------------------- PROGRAM FINISHED -----------------------------")
                 print("Final state of the system\n")
                 print(self)
-                return self.get_status()
+                return self.get_status(), tick
             
             if mode == EmulatorRunModes.FULL_DEBUG or (mode == EmulatorRunModes.DEBUG and current_mic > 2):
                 print("Evaluating microinstruction on address: " + str(current_mic))
@@ -142,8 +142,8 @@ class Emulator:
                 os.system('cls' if os.name == 'nt' else 'clear')
             
                 
-        print("Emulator terminated after 1000000 instructions")
-        return None
+        print("Emulator terminated after " + str(instructions_limit) + " instructions")
+        return None, instructions_limit
 
 
     def __str__(self):
