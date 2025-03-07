@@ -19,7 +19,7 @@ class ControlUnit:
             if cond:
                 res = self._mic + 1
             else:
-                if len(self._stack == STACK_SIZE):
+                if len(self._stack) == STACK_SIZE:
                     raise Exception("ControlUnit: stack overflow")
                 self._stack.append(self._mic + 1)
                 res = bar
@@ -31,7 +31,7 @@ class ControlUnit:
             else:
                 res = bar
         if instruction == 0b0100: # PUSH
-            if len(self._stack == STACK_SIZE):
+            if len(self._stack) == STACK_SIZE:
                 raise Exception("ControlUnit: stack overflow")
             self._stack.append(bar)
             res = self._mic + 1
